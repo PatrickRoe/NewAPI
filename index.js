@@ -73,6 +73,17 @@ app.put("/user/:id", (req, res) => {
   }
 });
 
+app.delete("/delete/:id"),
+  async (request, res) => {
+    try {
+      await Item.deleteOne({ _id: request.params.id });
+      res.sendStatus(204);
+    } catch {
+      res.sendStatus(404);
+      console.log('test');
+    }
+  };
+
 app.listen(PORT, () => {
   console.log(`Server läuft auf Port ${PORT}`);
 });
