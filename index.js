@@ -1,5 +1,5 @@
 import express from "express";
-import deleteUser from "./middleware/deleteUser.js";
+import deleteUser from "./middleware/deleteUserEmailPw.js";
 const app = express();
 const PORT = 3000;
 
@@ -72,8 +72,6 @@ app.put("/user/:id", (req, res) => {
       .json({ message: `User mit der ID ${userId} nicht vorhanden` });
   }
 });
-
-deleteUser
 
 app.listen(PORT, () => {
   console.log(`Server läuft auf Port ${PORT}`);

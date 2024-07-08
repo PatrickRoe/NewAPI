@@ -1,5 +1,5 @@
 
-const deleteUser = (req, res, next) => {
+const deleteUserEmailPw = (req, res, next) => {
     if (req.method === 'POST' || req.method === 'PUT' || req.method === 'PATCH') {
       delete req.body.email;
       delete req.body.password;
@@ -7,5 +7,5 @@ const deleteUser = (req, res, next) => {
     next();
   };
   
-  export default deleteUser;
+  export default deleteUserEmailPw;
   
